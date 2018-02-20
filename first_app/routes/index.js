@@ -19,41 +19,32 @@ router.get('/', function(req, res, next) {
   const weekday = today.getDay();
   const week = currentWeekNumber();
 
-  let info = [];
+  let info = {};
 
   Promise.all([
   juvenes(week, weekday).then(result => {
-    info.push(result)
-    console.log('eka')
-    console.log(info)
+    info.Juvenes = result
   }),
 
   amica(date, month, year).then(result => {
-    info.push(result)
-    console.log('toka')
-    console.log(info)
+    info.Amica = result
 }),
 
   sodexo(year, month, date).then(result => {
-    info.push(result)
-    console.log('kolmas')
-    console.log(info)
+    info.Sodexo = result
   }),
 
   cafe_konehuone(week, weekday).then(result => {
-    info.push(result)
-    console.log('neljäs')
-    console.log(info)
+    info.Cafe_konehuone = result
   }),
 
   fusion_kitchen(week, weekday).then(result => {
-    info.push(result)
-    console.log('viides')
-    console.log(info)
+    info.Fusion_kitchen = result
     
   })
   ]).then(rip =>{
     res.send(info)
+    console.log(info)
   })
 });
 

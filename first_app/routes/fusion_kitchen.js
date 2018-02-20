@@ -22,7 +22,7 @@ module.exports = function getData(week, weekday) {
     const linjasto2 = loput.MealOptions[1].MenuItems[0].Name_FI;
     const linjasto2_diet = loput.MealOptions[1].MenuItems[0].Diets;
 
-    return({"Fusion_Kitchen" :[linjasto1, linjasto1_diet, linjasto2, linjasto2_diet]});
+    return({linjasto1, linjasto1_diet, linjasto2, linjasto2_diet});
     });
 };
 

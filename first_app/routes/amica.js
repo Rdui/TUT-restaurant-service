@@ -32,8 +32,8 @@ module.exports = function getData(date, month, year) {
        var iltaruoka2 = stories.LunchMenu.SetMenus[10].Meals[0].Name;
        var iltaruoka2_diet = stories.LunchMenu.SetMenus[10].Meals[0].Diets
 
-       return ({"Amica" :[{"Linjasto1" :linjasto1, linjasto1_diet}, {"Linjasto2" :linjasto2, linjasto2_diet},
-         {"Iltaruoka1" :iltaruoka1, iltaruoka1_diet }, {"Iltaruoka2": iltaruoka2, iltaruoka2_diet}]});
+       return ({"Linjasto1" :linjasto1, linjasto1_diet}, {"Linjasto2" :linjasto2, linjasto2_diet},
+         {"Iltaruoka1" :iltaruoka1, iltaruoka1_diet }, {"Iltaruoka2": iltaruoka2, iltaruoka2_diet});
     }) 
 
 };

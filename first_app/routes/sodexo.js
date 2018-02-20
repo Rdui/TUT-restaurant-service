@@ -26,6 +26,6 @@ module.exports = function getData(year, month, date) {
        var linjasto2 = stories.courses[1].title_fi
        var linjasto2_diet = stories.courses[1].properties
 
-       return({"Sodexo" :[linjasto1, linjasto1_diet, linjasto2, linjasto2_diet]});
+       return({linjasto1, linjasto1_diet, linjasto2, linjasto2_diet});
 });
 };
