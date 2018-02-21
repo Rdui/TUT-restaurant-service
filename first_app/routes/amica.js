@@ -18,22 +18,24 @@ module.exports = function getData(date, month, year) {
         return response.json();
     })
     .then(function(stories) {
-       var linjasto1 = stories.LunchMenu.SetMenus[0].Meals[0].Name;
-       var linjasto1_diet = stories.LunchMenu.SetMenus[0].Meals[0].Diets
+        try {
+            var linjasto1 = stories.LunchMenu.SetMenus[0].Meals[0].Name;
+            var linjasto1_diet = stories.LunchMenu.SetMenus[0].Meals[0].Diets
 
-       var linjasto2 = stories.LunchMenu.SetMenus[1].Meals[0].Name;
-       var linjasto2_diet = stories.LunchMenu.SetMenus[1].Meals[0].Diets
+            var linjasto2 = stories.LunchMenu.SetMenus[2].Meals[0].Name;
+            var linjasto2_diet = stories.LunchMenu.SetMenus[2].Meals[0].Diets
 
-       //console.log(JSON.stringify(stories, null, 2));
+            var iltaruoka1 = stories.LunchMenu.SetMenus[9].Meals[0].Name;
+            var iltaruoka1_diet = stories.LunchMenu.SetMenus[9].Meals[0].Diets
 
-       var iltaruoka1 = stories.LunchMenu.SetMenus[9].Meals[0].Name;
-       var iltaruoka1_diet = stories.LunchMenu.SetMenus[9].Meals[0].Diets
+            var iltaruoka2 = stories.LunchMenu.SetMenus[10].Meals[0].Name;
+            var iltaruoka2_diet = stories.LunchMenu.SetMenus[10].Meals[0].Diets
+        } catch (err) {
+            throw(err)
+        }
 
-       var iltaruoka2 = stories.LunchMenu.SetMenus[10].Meals[0].Name;
-       var iltaruoka2_diet = stories.LunchMenu.SetMenus[10].Meals[0].Diets
-
-       return ({"Linjasto1" :linjasto1, linjasto1_diet}, {"Linjasto2" :linjasto2, linjasto2_diet},
-         {"Iltaruoka1" :iltaruoka1, iltaruoka1_diet }, {"Iltaruoka2": iltaruoka2, iltaruoka2_diet});
+       return ({linjasto1, linjasto1_diet, linjasto2, linjasto2_diet,
+         iltaruoka1, iltaruoka1_diet, iltaruoka2, iltaruoka2_diet});
     }) 
 
 };

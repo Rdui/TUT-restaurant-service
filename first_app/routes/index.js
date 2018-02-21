@@ -44,7 +44,6 @@ router.get('/', function(req, res, next) {
   })
   ]).then(rip =>{
     res.send(info)
-    console.log(info)
   })
 });
 
