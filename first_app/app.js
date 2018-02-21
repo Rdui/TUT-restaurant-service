@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var juvenes = require('./routes/juvenes');
 var sodexo = require('./routes/sodexo');
 var fusion_kitchen = require('./routes/fusion_kitchen');
@@ -30,7 +29,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/juvenes', juvenes);
 app.use('/sodexo', sodexo);
 app.use('/fusion_kitchen', fusion_kitchen);
